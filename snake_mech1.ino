@@ -61,6 +61,9 @@ void display(int points[5],int N)
     int N=LENGTH_SNAKE;
 
     m.clear();              // Clearing the display
+    int i;
+    for(i=0;i<N;i++)
+        m.SetDot(points[i][1],points[i][0],true);
 
     // Display N points in their respective locations. points[0][0],points[0][1] => head(x,y). points[N][0],points[N][1] => tail(x,y) 
     
