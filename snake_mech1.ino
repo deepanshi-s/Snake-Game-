@@ -45,10 +45,7 @@ void setup()
     
     tailx=getTailX(headx,dir);
     taily=getTaily(heady,dir);
-    
-    
-    
-   
+
 }
 
 void loop()
@@ -56,7 +53,7 @@ void loop()
     
 }
 
-void display(int points[5],int N)
+void display(int points[5][2],int N)
 {
     int N=LENGTH_SNAKE;
 
@@ -125,7 +122,7 @@ void move_forward(int points[5],int init_dir,int new_dir,int N)
     
 }
 
-int input(int init_dir)
+int input()
 {
     /*
     
@@ -134,8 +131,22 @@ int input(int init_dir)
         Give default direction as forward
     
     */
-
-
+	
+    // Just reading 2 digital inputs. can be changed later
+    
+    unsigned char left=0,right=0;
+    char new_dir=0;
+    
+    left=digitalRead(LEFT);
+    right=digitalRead(RIGHT);
+    
+    if(left==1)
+        new_dir='L';
+    else if(right==1)
+        new_dir='R';
+        
+    return new_dir;
+    
 }
 
 
